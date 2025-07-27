@@ -36,10 +36,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-ml-Md6">
-                                <rect key="frame" x="179" y="361.33333333333331" width="35" height="35"/>
+                                <rect key="frame" x="186.66666666666666" y="361.33333333333331" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="mph-dS-OMM"/>
-                                    <constraint firstAttribute="height" constant="35" id="xA4-6w-P6k"/>
+                                    <constraint firstAttribute="width" constant="20" id="mph-dS-OMM"/>
+                                    <constraint firstAttribute="height" constant="20" id="xA4-6w-P6k"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title=" ">
@@ -48,7 +48,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmQ-9u-IfJ">
-                                <rect key="frame" x="30" y="361.33333333333331" width="103" height="35"/>
+                                <rect key="frame" x="30" y="353.66666666666669" width="103" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Edit Name"/>
                                 <connections>
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzh-aH-Xeg">
-                                <rect key="frame" x="281" y="361.33333333333331" width="82" height="35"/>
+                                <rect key="frame" x="281" y="353.66666666666669" width="82" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Edit Bio"/>
                                 <connections>
@@ -82,6 +82,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bioLabel" destination="HTh-wN-P5m" id="k1l-dR-rSz"/>
+                        <outlet property="nameLabel" destination="Zaz-uK-Iyg" id="Nld-bb-GTL"/>
+                        <outlet property="separatorView" destination="pbx-ml-Md6" id="BFu-zy-kPj"/>
                         <segue destination="Nyb-yb-ylu" kind="presentation" identifier="EditNameSegue" id="vBe-DX-pqf"/>
                         <segue destination="nxk-IJ-avy" kind="presentation" identifier="EditBioSegue" id="gTX-M1-V6p"/>
                     </connections>

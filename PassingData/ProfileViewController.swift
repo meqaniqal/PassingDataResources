@@ -8,10 +8,24 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    //this is so we can round the corners of the button we are using to separate the Edit name and edit bio buttons.
+    @IBOutlet weak var separatorView: UIButton!
+    var currentName="Anonymous"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+   
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //turn the square between the edit name and edit bio buttons into a circle.
+    
+        separatorView.layer.cornerRadius=separatorView.frame.height/2
+        // this is necessary to make the custom rounding visible
+        separatorView.layer.masksToBounds = true
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -19,7 +33,7 @@ class ProfileViewController: UIViewController {
         if segue.identifier == "EditNameSegue" {
             //cast the UIViewController that is segue.destination to our custom class EditNameViewController so that we can access its pre-load variables, such as the placeHolderText variable.
             let destinationVC=segue.destination as! EditNameViewController
-            destinationVC.placeHolderText="Joe"
+            destinationVC.placeHolderText=currentName
             
         }
     }
