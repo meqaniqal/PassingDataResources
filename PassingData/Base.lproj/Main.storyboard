@@ -110,6 +110,9 @@
                                 <rect key="frame" x="20" y="209" width="353" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonDidTouch:" destination="Nyb-yb-ylu" eventType="touchUpInside" id="nic-5u-WRU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGE-sv-77O">
                                 <rect key="frame" x="154.66666666666666" y="80" width="84" height="21"/>
@@ -154,15 +157,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CKi-oX-v2j">
-                                <rect key="frame" x="20" y="136" width="353" height="34"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YG1-G2-rhy">
+                                <rect key="frame" x="20" y="131" width="353" height="154"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-xp-ptF">
-                                <rect key="frame" x="20" y="203" width="353" height="35"/>
+                                <rect key="frame" x="20" y="315" width="353" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1Rk-tQ-aox"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonDidtouch:" destination="nxk-IJ-avy" eventType="touchUpInside" id="RTd-Tb-AIT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3jc-Fs-Ii0"/>
@@ -170,22 +181,30 @@
                         <constraints>
                             <constraint firstItem="VJc-vA-I8j" firstAttribute="top" secondItem="3jc-Fs-Ii0" secondAttribute="top" constant="80" id="18T-tE-Fae"/>
                             <constraint firstItem="VJc-vA-I8j" firstAttribute="centerX" secondItem="VYU-e5-4Q1" secondAttribute="centerX" id="6BE-K3-4Xz"/>
-                            <constraint firstItem="BC8-xp-ptF" firstAttribute="top" secondItem="CKi-oX-v2j" secondAttribute="bottom" constant="33" id="8AV-eh-trM"/>
-                            <constraint firstItem="CKi-oX-v2j" firstAttribute="leading" secondItem="3jc-Fs-Ii0" secondAttribute="leading" constant="20" id="HGb-eJ-HWg"/>
-                            <constraint firstItem="CKi-oX-v2j" firstAttribute="top" secondItem="VJc-vA-I8j" secondAttribute="bottom" constant="35" id="Nrt-0a-Da3"/>
+                            <constraint firstItem="YG1-G2-rhy" firstAttribute="leading" secondItem="3jc-Fs-Ii0" secondAttribute="leading" constant="20" id="C2K-Nh-eC0"/>
                             <constraint firstItem="3jc-Fs-Ii0" firstAttribute="trailing" secondItem="BC8-xp-ptF" secondAttribute="trailing" constant="20" id="OgA-iw-Q5a"/>
-                            <constraint firstItem="3jc-Fs-Ii0" firstAttribute="trailing" secondItem="CKi-oX-v2j" secondAttribute="trailing" constant="20" id="oWu-4r-qVv"/>
+                            <constraint firstItem="3jc-Fs-Ii0" firstAttribute="trailing" secondItem="YG1-G2-rhy" secondAttribute="trailing" constant="20" id="d5x-lQ-WLr"/>
+                            <constraint firstItem="3jc-Fs-Ii0" firstAttribute="bottom" secondItem="BC8-xp-ptF" secondAttribute="bottom" constant="492" id="jkc-Vn-wBu"/>
+                            <constraint firstItem="BC8-xp-ptF" firstAttribute="top" secondItem="YG1-G2-rhy" secondAttribute="bottom" constant="30" id="mew-0S-LVH"/>
+                            <constraint firstItem="YG1-G2-rhy" firstAttribute="top" secondItem="VJc-vA-I8j" secondAttribute="bottom" constant="30" id="ozO-LN-UEF"/>
                             <constraint firstItem="BC8-xp-ptF" firstAttribute="leading" secondItem="3jc-Fs-Ii0" secondAttribute="leading" constant="20" id="zHM-xY-b2f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bioTextView" destination="YG1-G2-rhy" id="yns-g0-eaH"/>
+                        <outlet property="editBioSubmitButton" destination="BC8-xp-ptF" id="oSf-lk-8Ya"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7N-QP-osv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="273"/>
+            <point key="canvasLocation" x="925.95419847328242" y="272.53521126760563"/>
         </scene>
     </scenes>
     <resources>
         <image name="person" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
